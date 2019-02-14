@@ -4,7 +4,8 @@ The script is used to detect the keyframes in a video
 # Description
 keyframeDetector.py is an OpenCV/Python based script for extracting keyframes from a video. It comprises script that performs the following function
 
-keyframeDetection: Outputs a set of frames and csv file that represent the timestamp of the keyframes in the video. This will generate an output folder with subfolders that contain images at various scales. The output includes the greyscale keyframes in foder “keyFrames”. The keyframe number is appended to the image names.  The grids of the keyframes is saved in folder “imageGrids”. The keyframe number and the grid number are appended to the image names.The csv file is saved as “output.csv” in folder “csvFile”. All the data are collected during the process. 
+## keyframeDetection: 
+Outputs a set of frames and csv file that represent the timestamp of the keyframes in the video. This will generate an output folder with subfolders that contain images at various scales. The output includes the greyscale keyframes in foder “keyFrames”. The keyframe number is appended to the image names.  The grids of the keyframes is saved in folder “imageGrids”. The keyframe number and the grid number are appended to the image names.The csv file is saved as “output.csv” in folder “csvFile”. All the data are collected during the process. 
 
 # Status
 Useful for the video with less noise and huge transition in from frame to frame. The global keyframe will be identified by setting the threshold as close to 1 as possible. 
@@ -15,8 +16,8 @@ Requires a working python installing with the OpenCV package and modules such as
 # Usage
 There is one main script. keyframeDetector.py contains the keyframe ditection, keyframe plot analysis and image grids from the split keyframes.
 
-keyframeDetector
-python keyframeDetector.py -s "/path/to/input/mp4file/video.mp4" -d "/path/to/output/folder" -x int (grid size in width) -y int(grid size in height) –t float between 0 to 1
+## keyframeDetector
+`python keyframeDetector.py -s "/path/to/input/mp4file/video.mp4" -d "/path/to/output/folder" -x int (grid size in width) -y int(grid size in height) –t float between 0 to 1`
 
 -s  --source: This is a path to the source file which includes video. For example if the video is in the desktop, then the path will be “/Users\name\Desktop\videoname.mp4”. Note that the source should include the video name with *.mp4 and should be in “”.  
 -d  --dest: The path where you want to save the outputs. It should be a folder already created by the user and the full path for the folder should be given. For example, if the folder is “DemoResults” placed in Desktop, the path will be “/Users\name\Desktop\DemoResults”, 
@@ -30,7 +31,7 @@ python keyframeDetector.py -s "/path/to/input/mp4file/video.mp4" -d "/path/to/ou
 # Usage in Thonny
 The syntax to run the script in Thonny is given below
 
-%Run path/to/folder/keyframeDetector.py -s "/path/to/input/mp4file/video.mp4" -d "/path/to/output/folder" -x int (grid size in width) -y int(grid size in height) –t float between 0 to 1)
+`%Run path/to/folder/keyframeDetector.py -s "/path/to/input/mp4file/video.mp4" -d "/path/to/output/folder" -x int (grid size in width) -y int(grid size in height) –t float between 0 to 1)`
 
-Example
-%Run /Users/Myname/Desktop/keyframeDetector.py -s "/Users/Myname/Desktop/demoVideo1.mp4" -d "/Users/Myname/Desktop/Myresults" -x 4 -y 4 -t 0.5
+## Example
+`%Run /Users/Myname/Desktop/keyframeDetector.py -s "/Users/Myname/Desktop/demoVideo1.mp4" -d "/Users/Myname/Desktop/Myresults" -x 4 -y 4 -t 0.5`
