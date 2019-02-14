@@ -13,7 +13,7 @@ Useful for the video with less noise and huge transition in from frame to frame.
 ## Setup
 Requires a working python installing with the OpenCV package and modules such as numpy, argparse, pyplot from matplotlib, peakutils and Image from PIL (Python Imaging Library). The suggested python IDE to run this script is Thonny. The download link is given at https://thonny.org/
 
-## Usage
+## Usage in IDLE (Python GUI)
 There is one main script. keyframeDetector.py contains the keyframe ditection, keyframe plot analysis and image grids from the split keyframes.
 
 ### keyframeDetector
