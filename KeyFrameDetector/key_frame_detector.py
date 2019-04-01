@@ -24,6 +24,7 @@ def keyframeDetection(source, dest, Thres, plotMetrics=False, verbose=False):
     lstdiffMag = []
     timeSpans = []
     images = []
+    full_color = []
     lastFrame = None
     Start_time = time.process_time()
     
@@ -35,7 +36,7 @@ def keyframeDetection(source, dest, Thres, plotMetrics=False, verbose=False):
         frame_number = cap.get(cv2.CAP_PROP_POS_FRAMES) - 1
         lstfrm.append(frame_number)
         images.append(grayframe)
-
+        full_color.append(frame)
         if frame_number == 0:
             lastFrame = blur_gray
 
@@ -58,7 +59,7 @@ def keyframeDetection(source, dest, Thres, plotMetrics=False, verbose=False):
 
     cnt = 1
     for x in indices:
-        cv2.imwrite(os.path.join(keyframePath , 'keyframe'+ str(cnt) +'.jpg'), images[x])
+        cv2.imwrite(os.path.join(keyframePath , 'keyframe'+ str(cnt) +'.jpg'), full_color[x])
         cnt +=1
         log_message = 'keyframe ' + str(cnt) + ' happened at ' + str(timeSpans[x]) + ' sec.'
         if(verbose):

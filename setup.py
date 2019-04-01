@@ -1,8 +1,4 @@
-import sys
 from setuptools import setup, find_packages
-from setuptools.command.install import install
-from setuptools.command.develop import develop
-from setuptools.command.egg_info import egg_info
 
 setup(
     name="key-frame-detector",
@@ -10,7 +6,7 @@ setup(
     author="Joel Ibaceta",
     author_email="mail@joelibaceta.com",
     license='MIT',
-    description="It is a simple python tool to extract key frame images from video",
+    description="It is a simple python tool to extract key frame images from a video file",
     long_description="A simple tool to detect and extract key frame images from a video file",
     url="https://github.com/joelibaceta/video-keyframe-extractor",
     project_urls={
@@ -29,7 +25,7 @@ setup(
     keywords='video key-frame terminal opencv extractor',
     entry_points={
         "console_scripts": [
-            'key-frames-detector=KeyFrameDetector.cli:main'
+            'key-frames-detector=cli:main'
         ]
     }
 )
