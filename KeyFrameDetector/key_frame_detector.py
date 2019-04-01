@@ -4,7 +4,7 @@ import csv
 import numpy as np
 import time
 import peakutils
-from utils import convert_frame_to_grayscale, prepare_dirs, plot_metrics
+from KeyFrameDetector.utils import convert_frame_to_grayscale, prepare_dirs, plot_metrics
 
 def keyframeDetection(source, dest, Thres, plotMetrics=False, verbose=False):
     

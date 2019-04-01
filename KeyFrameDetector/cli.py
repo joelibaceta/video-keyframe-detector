@@ -1,6 +1,6 @@
 import argparse
 
-from keyframeDetector import keyframeDetection
+from KeyFrameDetector.key_frame_detector import keyframeDetection
 
 parser = argparse.ArgumentParser()
 
