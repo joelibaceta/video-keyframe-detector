@@ -6,11 +6,12 @@
 
 A `Key Frame` is a location on a video timeline which marks the beginning or end of a smooth transition throughout the fotograms, `Key Frame Detector` try to look for the most representative and significant frames that can describe the movement or main events in a video.
 
-<center>
+<p align="center">
 
-   ![header](images/demo.gif)
-    
-</center>
+   ![demo](images/demo.gif)
+
+</p>
+
 
 ## Installation
 
