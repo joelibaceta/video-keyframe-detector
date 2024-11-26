@@ -1,5 +1,6 @@
 import os
 import cv2
+import numpy as np
 import matplotlib.pyplot as plt
 from PIL import Image
 
@@ -52,6 +53,7 @@ def prepare_dirs(keyframePath, imageGridsPath, csvPath):
 
 
 def plot_metrics(indices, lstfrm, lstdiffMag):
+    y = np.array(lstdiffMag)
     plt.plot(indices, y[indices], "x")
     l = plt.plot(lstfrm, lstdiffMag, 'r-')
     plt.xlabel('frames')
