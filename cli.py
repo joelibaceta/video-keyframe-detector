@@ -12,7 +12,7 @@ def main():
     args = parser.parse_args()
 
 
-    keyframeDetection(args.source, args.dest, float(args.Thres))
+    keyframeDetection(args.source, args.dest, float(args.Thres), max_keyframes=5)
 
 if __name__ == '__main__':
     main()
