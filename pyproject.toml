@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "video-keyframe-detector"
+version = "0.1.0"
+description = "It is a simple python tool to extract key-frames from a video"
+readme = "README.md"
+requires-python = ">=3.7"
+license = {text = "GPL-3.0-or-later"}
+authors = [
+  { name = "Joel Ibaceta", email = "mail@joelibaceta.com" }
+]
+dependencies = [
+  "numpy",
+  "opencv-python",
+  "peakutils"
+]
+
+[project.scripts]
+video-keyframe-detector = "cli:main"
+
+[project.urls]
+Homepage = "https://github.com/joelibaceta/video-keyframe-detector"

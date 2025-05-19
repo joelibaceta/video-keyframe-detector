@@ -5,3 +5,6 @@ videos
 output
 .idea
 .DS_Store
+dist
+*.egg-info
+*.egg
