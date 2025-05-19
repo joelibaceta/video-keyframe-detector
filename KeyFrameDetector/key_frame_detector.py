@@ -95,8 +95,3 @@ def keyframeDetection(source, dest, Thres, max_keyframes=8, plotMetrics=False, v
      
      
     cv2.destroyAllWindows()
-
-
-
-if __name__  == '__main__':
-    keyframeDetection('@zabi.ff8_video_7425631184450833682.mp4', 'output', 0.3, 8)
