@@ -13,9 +13,11 @@ authors = [
   { name = "Joel Ibaceta", email = "mail@joelibaceta.com" }
 ]
 dependencies = [
-  "numpy",
-  "opencv-python",
-  "peakutils"
+  "numpy==2.3.0",
+  "opencv-python==4.11.0.86",
+  "peakutils==1.3.5",
+  "matplotlib==3.10.3",
+  "pillow==11.2.1"
 ]
 
 [project.scripts]

@@ -4,14 +4,21 @@ import csv
 import numpy as np
 import time
 import peakutils
+import logging
 from KeyFrameDetector.utils import convert_frame_to_grayscale, prepare_dirs, plot_metrics
+
+logging.basicConfig(
+    filename='keyframe_detection.log',
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
 
 def keyframeDetection(source, dest, Thres, max_keyframes=8, plotMetrics=False, verbose=False):
     i = 0
-    keyframePath = dest + '/keyFrames'
-    imageGridsPath = dest + '/imageGrids'
-    csvPath = dest + '/csvFile'
-    path2file = csvPath + '/output.csv' 
+    keyframePath = os.path.join(dest, 'keyFrames')
+    imageGridsPath = os.path.join(dest, 'imageGrids')
+    csvPath = os.path.join(dest, 'csvFile')
+    path2file = os.path.join(csvPath, 'output.csv')
     prepare_dirs(keyframePath, imageGridsPath, csvPath)
     
      
@@ -20,7 +27,7 @@ def keyframeDetection(source, dest, Thres, max_keyframes=8, plotMetrics=False, v
      
      
     if not cap.isOpened():
-        print("Error opening video file")
+        logging.error("Error opening video file")
         return
      
      
@@ -37,8 +44,9 @@ def keyframeDetection(source, dest, Thres, max_keyframes=8, plotMetrics=False, v
         if i > 5000:
             break
         ret, frame = cap.read()
-        print(f"""Processing frame {i} of {length}""")
+        logging.info(f"Processing frame {i} of {length}")
         if not ret:
+            logging.warning(f"Frame {i} could not be read. Stopping early.")
             break
          
          
@@ -87,8 +95,8 @@ def keyframeDetection(source, dest, Thres, max_keyframes=8, plotMetrics=False, v
         cv2.imwrite(os.path.join(keyframePath, f'keyframe{cnt}.jpg'), full_color[x])
         log_message = f'keyframe {cnt} happened at {timeSpans[x]} sec.'
         if verbose:
-            print(log_message)
-        with open(path2file, 'w') as csvFile:
+            logging.info(log_message)
+        with open(path2file, 'a') as csvFile: # 'a' mode to append instead of overwrite
             writer = csv.writer(csvFile)
             writer.writerow([log_message])
         cnt += 1
