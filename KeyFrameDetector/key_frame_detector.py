@@ -41,10 +41,10 @@ def keyframeDetection(source, dest, Thres, max_keyframes=8, plotMetrics=False, v
      
      
     for i in range(length):
-        if i > 5000:
+        if i > length:
             break
         ret, frame = cap.read()
-        logging.info(f"Processing frame {i} of {length}")
+        logging.debug(f"Processing frame {i} of {length}")
         if not ret:
             logging.warning(f"Frame {i} could not be read. Stopping early.")
             break
