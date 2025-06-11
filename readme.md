@@ -32,10 +32,15 @@ pip install video-keyframe-detector
 ## Command-Line Usage
 After installing the package (see Installation section), you can run the keyframe detector from the terminal:
 
-```python
-Change directory to video-keyframe-detector:
-pip install -r requirements.txt
-python3 cli.py -s "videos/acrobacia.mp4" -d output/ -t 0.3
+```bash
+# After installation, run the detector with your video file:
+video-keyframe-detector -s "path/to/your/video.mp4" -d output/ -t 0.3
+
+# Or if running from source:
+# git clone https://github.com/joelibaceta/video-keyframe-detector
+# cd video-keyframe-detector
+# pip install -r requirements.txt
+# python3 cli.py -s "videos/acrobacia.mp4" -d output/ -t 0.3
 ```
 
 ## Python API Usage
