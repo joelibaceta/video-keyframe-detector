@@ -25,6 +25,7 @@ def keyframeDetection(source, dest, Thres, max_keyframes=8, plotMetrics=False, v
 
     if not cap.isOpened():
         logging.error("Error opening video file")
+        cap.release()
         return
 
     lstfrm = []
