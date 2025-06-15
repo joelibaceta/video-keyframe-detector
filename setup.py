@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="key-frame-detector",
+    name="video-keyframe-detector",
     version="1.0.0",
     author="Joel Ibaceta",
     author_email="mail@joelibaceta.com",

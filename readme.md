@@ -26,11 +26,40 @@ A `Key Frame` is a location on a video timeline which marks the beginning or end
 - PIL
 
 ```python
-pip install key-frame-detector
+pip install video-keyframe-detector
 ```
 
+## Command-Line Usage
+After installing the package (see Installation section), you can run the keyframe detector from the terminal:
 
+```bash
+# After installation, run the detector with your video file:
+video-keyframe-detector -s "path/to/your/video.mp4" -d output/ -t 0.3
 
+# Or if running from source:
+# git clone https://github.com/joelibaceta/video-keyframe-detector
+# cd video-keyframe-detector
+# pip install -r requirements.txt
+# python3 cli.py -s "videos/acrobacia.mp4" -d output/ -t 0.3
+```
 
+## Python API Usage
+You can also use the detector directly in your Python code:
 
+```python
+from KeyFrameDetector.key_frame_detector import keyframeDetection
+
+source_video = "videos/acrobacia.mp4"
+output_dir = "output"
+threshold = 0.3
+
+keyframeDetection(
+    source=source_video,
+    dest=output_dir,
+    Thres=threshold,
+    max_keyframes=5,      
+    plotMetrics=True,     
+    verbose=True         
+)
+```
 
